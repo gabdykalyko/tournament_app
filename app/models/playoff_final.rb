@@ -1,0 +1,2 @@
+class PlayoffFinal < ApplicationRecord
+end

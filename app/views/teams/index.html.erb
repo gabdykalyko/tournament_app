@@ -1,0 +1,12 @@
+<h1>Tournament Teams</h1>
+<%= link_to "Создать команды", teams_new_path, class: "btn btn-primary" %>
+<%= link_to "Распределить по дивизионам", distribute_divisions_teams_path, class: "btn btn-primary" %>
+
+<h2>Сохраненные команды:</h2>
+<% @teams.each do |team| %>
+  <p><%= team.name %></p>
+<% end %>
+
+<div>
+  <%= link_to "Очистить все команды", clear_all_teams_path, method: :delete, data: { confirm: "Вы уверены?" }, class: "btn btn-danger" %>
+</div>

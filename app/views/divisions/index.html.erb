@@ -1,0 +1,68 @@
+<h2>Дивизион A</h2>
+<% @division_a_teams.each do |team| %>
+  <p><%= team.name %></p>
+<% end %>
+
+<div>
+  <%= link_to "Generate Division A Results", generate_division_a_result_path, class: "btn btn-primary" %>
+</div>
+
+<h2>Дивизион B</h2>
+<% @division_b_teams.each do |team| %>
+  <p><%= team.name %></p>
+<% end %>
+
+<div>
+  <%= link_to "Generate Division B Results", generate_division_b_result_path, class: "btn btn-primary" %>
+</div>
+
+<h2>Playoff Results - Division A</h2>
+<ul>
+  <% @playoff_a_results.each do |result| %>
+    <li><%= result.team_name %> </li>
+  <% end %>
+</ul>
+
+<h2>Playoff Results - Division B</h2>
+<ul>
+  <% @playoff_b_results.each do |result| %>
+    <li><%= result.team_name %> </li>
+  <% end %>
+</ul>
+
+<h2>Playoff Results</h2>
+<%= link_to "Playoff Result", generate_playoff_results_path, class: "btn btn-primary" %>
+
+<h2>Playoff Division A 1/2</h2>
+<ul>
+  <% @playoff_a12_results.each do |result| %>
+    <li><%= result.team_name %></li>
+  <% end %>
+</ul>
+
+<h2>Playoff Division B 1/2</h2>
+<ul>
+  <% @playoff_b12_results.each do |result| %>
+    <li><%= result.team_name %></li>
+  <% end %>
+</ul>
+
+<h2>Final</h2>
+<% if @final_result %>
+  <ul>
+    <% @final_result.each do |result| %>
+      <li><%= result.team_name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Результаты Playoff для Final пока не сгенерированы.</p>
+<% end %>
+
+<h2>Winner</h2>
+<% if @winner_result %>
+  <ul>
+    <li><%= @winner_result.team_name %></li>
+  </ul>
+<% else %>
+  <p>Результаты Playoff для Winner пока не сгенерированы.</p>
+<% end %>

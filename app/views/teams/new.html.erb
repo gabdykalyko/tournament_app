@@ -1,0 +1,10 @@
+<h1>Создать команды</h1>
+<%= form_tag teams_path do %>
+  <% (1..16).each do |i| %>
+    <div class="form-group">
+      <%= label_tag "team_#{i}", "Команда #{i}" %>
+      <%= text_field_tag "team_#{i}", "", class: "form-control" %>
+    </div>
+  <% end %>
+  <%= submit_tag "Сохранить", class: "btn btn-primary" %>
+<% end %>
